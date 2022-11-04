@@ -1,32 +1,32 @@
 from datetime import datetime
 
 def time_it(func):
-    def wrapper():
+    def wrapper(*args, **kwargs):
         start = datetime.now()
-        result = func()
+        result = func(*args, **kwargs)
         print(datetime.now() - start)
         return result
     return wrapper
 
 
 @time_it
-def one():
+def one(x: int):
     # start = datetime.now()
     l = []
-    for i in range(10**4):
+    for i in range(x):
         if i % 2 == 0:
             l.append(i)
     # print(datetime.now() - start)
     return l
 
 @time_it
-def two():
+def two(x: int):
     # start = datetime.now()
-    l = [i for i in range(10**4) if i % 2 == 0]
+    l = [i for i in range(x) if i % 2 == 0]
     # print(datetime.now() - start)
     return l
 
-l1 = one()
-l2 = two()
-print(l1)
-print(l2)
+l1 = one(12)
+l2 = two(12)
+# print(l1)
+# print(l2)
