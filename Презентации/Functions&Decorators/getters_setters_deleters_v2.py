@@ -27,6 +27,10 @@ class StudentB:
 
     @property
     def full_name(self):
+        '''
+        Функция каждый раз пересчитывает
+        значение атрибута _full_name при обращении к ней!
+        '''
         if self._full_name is None:
             self._full_name = f'{self._name} {self._surname}'
         return self._full_name
@@ -37,5 +41,10 @@ print(s.__dict__)
 print(f'{s.full_name = }')
 print('*' * 40)
 s.surname = 'Johnson'
+print(f'{s.full_name = }')
+print(s.__dict__)
+print('*' * 40)
+s.name = 'Лев'
+s.surname = 'Толстой'
 print(f'{s.full_name = }')
 print(s.__dict__)
