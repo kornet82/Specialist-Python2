@@ -1,3 +1,4 @@
+import functools
 '''
 5+add(4)
     4+add(3)
@@ -6,11 +7,20 @@
                 Базовый случай == 1 -> 1
 '''
 
-def add(n):
-    if n == 1:
-        print(n)
-        return 1
+# def add(n):
+#     if n == 1:
+#         print(n)
+#         return 1
+#     else:
+#         print(n)
+#         return n + add(n - 1)
+# print ('Рекурсивная сумма =', add(int(input("Введите число для подсчета рекурсивной суммы:"))))
+
+@functools.lru_cache() ## Если число больше 40!!
+def fib(n):
+    if n > 2:
+        return fib(n - 1) + fib(n - 2)
     else:
-        print(n)
-        return n + add(n - 1)
-print ('Рекурсивная сумма =', add(int(input("Введите число для подсчета рекурсивной суммы:"))))
+        return 1
+
+print("Число Фиббоначи = ", fib(int(input('Введите номер члена последовательности Фиббоначи:'))))
