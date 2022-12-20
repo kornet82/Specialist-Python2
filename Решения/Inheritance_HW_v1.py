@@ -67,7 +67,7 @@ class Rect:
 
 class Square(Rect):
     def __init__(self, p1: Point, size):
-        Rect.__init__(self,p1, Point(p1.x + size, p1.y + size))
+        Rect.__init__(self, p1, Point(p1.x + size, p1.y + size))
 
     def __str__(self):
         return f'Square {self.height}x{self.lenght}'
