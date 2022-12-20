@@ -1,4 +1,5 @@
 def selection_sort(a):
+    '''Сортировка выбором при помощи FOR'''
     lenght = len(a)
     for i in range (lenght - 1):
         idx_min = i
@@ -7,7 +8,9 @@ def selection_sort(a):
                 idx_min = j
         a[idx_min], a[i] = a[i], a[idx_min]
 
+
 def selection_sort_via_while(a):
+    '''Сортировка выбором при помощи WHILE'''
     print ('Before sort', a)
     i = 0
     while i < len(a) - 1:
